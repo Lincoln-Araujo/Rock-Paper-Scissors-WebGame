@@ -1,1 +1,0 @@
-![project](../../images/javascript-project1.png)
