@@ -1,7 +1,7 @@
 # Rock, paper & scissors
 :fist: :raised_hand: :v: <i style="color=C1C4C4"> web page version </i>
 
-<img src="./images/javascript-project1.png" href="https://lincoln-araujo.github.io/Rock-Paper-Scissors-WebGame/" target="_blank" width=300/>
+<a href="https://lincoln-araujo.github.io/Rock-Paper-Scissors-WebGame/" target="_blank"><img src="./images/javascript-project1.png"/></a>
 
 #### **Check this project in action:**
 link: <a href='https://lincoln-araujo.github.io/Rock-Paper-Scissors-WebGame/' target='_blank'> Rock, paper and scissors - web page </a> 
