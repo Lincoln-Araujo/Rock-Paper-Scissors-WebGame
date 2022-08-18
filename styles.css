@@ -1,5 +1,5 @@
 body {
-    background-image: url(../../images/china-landscape.jpg);
+    background-image: url(./images/china-landscape.jpg);
     background-attachment: fixed;
     background-size: cover;
     font-family: 'Noto Sans SC', sans-serif;
@@ -161,7 +161,7 @@ footer {
 @media screen and (max-width: 360px) {
 
     body {
-        background-image: url(../../images/china-landscape-mobile.png);
+        background-image: url(./images/china-landscape-mobile.png);
     }
 
     header {
