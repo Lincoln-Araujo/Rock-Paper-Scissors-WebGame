@@ -8,7 +8,9 @@ link: <a href='https://lincoln-araujo.github.io/Rock-Paper-Scissors-WebGame/' ta
 
 :memo:**Why did I do this project?** 
 <p style="font-size: 16px">
-    This is the final assignment that I did in the programming training course offered by <a href="https://www.brainnest.consulting/" target="_blank"> BRAINNEST </a>. 
+    This is the final assignment that I worked on in the programming training course offered by <a href="https://www.brainnest.consulting/" target="_blank"> BRAINNEST </a>. 
+</p>
+<p>
     How this game have a rule that the player must win 5 rounds to be the champion, making a loop was a little challenge because 'while' is a kind of loop really annoying if you do not know how to make it stops. In the end, I could find a way to use 'while' with some 'ifs' to prevent input errors.
 </p>
 

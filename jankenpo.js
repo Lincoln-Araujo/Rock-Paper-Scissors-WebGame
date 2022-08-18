@@ -1,5 +1,98 @@
 /* FUNCTIONS */
 
+// main function to start the game 
+function game (func) {
+
+    while(newScorePlayer < 5 || newScoreComputer < 5) {
+
+        let playAgain;
+
+        func     
+
+        document.getElementById("round").innerHTML = `ROUND ${round}`
+
+        break;
+    }  
+    
+    if (newScoreComputer == 5) {
+            
+        document.getElementById("message").innerHTML = "Oh no, computer is the winner...";
+
+        alert("GAME OVER");
+
+        window.location.reload();
+        
+    } else if (newScorePlayer == 5) {
+        
+        document.getElementById("message").innerHTML = "CONGRATULATIONS! You are the WINNER!";  
+        
+        alert("Congratulations, champion!");
+
+        window.location.reload();
+
+    } 
+ 
+} 
+
+// function to play one round and set new scores
+function playRound(playerChoice, computerChoice) {
+
+    if (playerChoice == "paper" && computerChoice == "scissors") {
+        newScoreComputer++;
+        round++;
+        console.log(`player: ${newScorePlayer} x computer: ${newScoreComputer}`);
+        console.log("You Lose! Scissors cuts paper.");
+        console.log(" -------- "); 
+        document.getElementById("message").innerHTML = "You Lose! Scissors cuts paper."
+    } else if ( playerChoice == "scissors" && computerChoice == "rock") {
+        newScoreComputer++;
+        round++;
+        console.log(`player: ${newScorePlayer} x computer: ${newScoreComputer}`);
+        console.log("You Lose! Rock breaks scissors.");
+        console.log(" -------- ");  
+        document.getElementById("message").innerHTML = "You Lose! Rock breaks scissors.";
+    } else if ( playerChoice == "rock" && computerChoice == "paper") {
+        newScoreComputer++;
+        round++;
+        console.log(`player: ${newScorePlayer} x computer: ${newScoreComputer}`);
+        console.log("You Lose! Paper covers rock.");
+        console.log(" -------- "); 
+        document.getElementById("message").innerHTML = "You Lose! Paper covers rock.";
+    } else if ( playerChoice == "paper" && computerChoice == "rock") {
+        newScorePlayer++;
+        round++;
+        console.log(`player: ${newScorePlayer} x computer: ${newScoreComputer}`);
+        console.log("You Win! Paper covers rock.");
+        console.log(" -------- "); 
+        document.getElementById("message").innerHTML = "You Win! Paper covers rock.";
+    } else if ( playerChoice == "scissors" && computerChoice == "paper") {
+        newScorePlayer++;
+        round++;
+        console.log(`player: ${newScorePlayer} x computer: ${newScoreComputer}`);
+        console.log("You Win! Scissors cuts paper.");
+        console.log(" -------- ");  
+        document.getElementById("message").innerHTML = "You Win! Scissors cuts paper."
+    } else if ( playerChoice == "rock" && computerChoice == "scissors") {
+        newScorePlayer++;
+        round++;
+        console.log(`player: ${newScorePlayer} x computer: ${newScoreComputer}`);
+        console.log("You Win! Rock breaks scissors.");
+        console.log(" -------- "); 
+        document.getElementById("message").innerHTML = "You Win! Rock breaks scissors."
+    } else if ( playerChoice == computerChoice) {
+        round++;
+        console.log(`player: ${newScorePlayer} x computer: ${newScoreComputer}`);
+        console.log("Oh, it's a draw!");
+        console.log(" -------- "); 
+        document.getElementById("message").innerHTML = "Oh, it's a draw!"
+    } else {
+        console.log("You can only choose paper, scissors or rock");
+        console.log(" -------- "); 
+        document.getElementById("message").innerHTML = "You can only choose paper, scissors or rock";
+    }
+        
+}
+
 // this function returns a random choice for the adversary(computer)
 function computerPlay() {
 
@@ -20,6 +113,7 @@ function returnRock() {
     playerComputer = computerPlay();
     returnComputerChoice(playerComputer);
     console.log("you chose rock"); 
+    console.log(" "); 
     game(playRound("rock", playerComputer));
     returnScore();
 }
@@ -30,6 +124,7 @@ function returnPaper() {
     playerComputer = computerPlay();
     returnComputerChoice(playerComputer);
     console.log("you chose paper");
+    console.log(" "); 
     game(playRound("paper", playerComputer));
     returnScore();
 }
@@ -40,6 +135,7 @@ function returnScissors() {
     playerComputer = computerPlay();
     returnComputerChoice(playerComputer);
     console.log("you chose scissors");
+    console.log(" "); 
     game(playRound("scissors", playerComputer));
     returnScore();
 }
@@ -67,56 +163,7 @@ function returnComputerChoice(computerChoice) {
     }
 }
 
-// function to play one round and set new scores
-function playRound(playerOne, playerTwo) {
 
-    if (playerOne == "paper" && playerTwo == "scissors") {
-        newScoreComputer++;
-        round++;
-        console.log(`player: ${newScorePlayer} x computer: ${newScoreComputer}`);
-        console.log("You Lose! Scissors cuts paper.");
-        document.getElementById("message").innerHTML = "You Lose! Scissors cuts paper."
-    } else if ( playerOne == "scissors" && playerTwo == "rock") {
-        newScoreComputer++;
-        round++;
-        console.log(`player: ${newScorePlayer} x computer: ${newScoreComputer}`);
-        console.log("You Lose! Rock breaks scissors.");
-        document.getElementById("message").innerHTML = "You Lose! Rock breaks scissors.";
-    } else if ( playerOne == "rock" && playerTwo == "paper") {
-        newScoreComputer++;
-        round++;
-        console.log(`player: ${newScorePlayer} x computer: ${newScoreComputer}`);
-        console.log("You Lose! Paper covers rock.");
-        document.getElementById("message").innerHTML = "You Lose! Paper covers rock.";
-    } else if ( playerOne == "paper" && playerTwo == "rock") {
-        newScorePlayer++;
-        round++;
-        console.log(`player: ${newScorePlayer} x computer: ${newScoreComputer}`);
-        console.log("You Win! Paper covers rock.");
-        document.getElementById("message").innerHTML = "You Win! Paper covers rock.";
-    } else if ( playerOne == "scissors" && playerTwo == "paper") {
-        newScorePlayer++;
-        round++;
-        console.log(`player: ${newScorePlayer} x computer: ${newScoreComputer}`);
-        console.log("You Win! Scissors cuts paper.");
-        document.getElementById("message").innerHTML = "You Win! Scissors cuts paper."
-    } else if ( playerOne == "rock" && playerTwo == "scissors") {
-        newScorePlayer++;
-        round++;
-        console.log(`player: ${newScorePlayer} x computer: ${newScoreComputer}`);
-        console.log("You Win! Rock breaks scissors.")
-        document.getElementById("message").innerHTML = "You Win! Rock breaks scissors."
-    } else if ( playerOne == playerTwo) {
-        round++;
-        console.log(`player: ${newScorePlayer} x computer: ${newScoreComputer}`);
-        console.log("Oh, it's a tie!")
-        document.getElementById("message").innerHTML = "Oh, it's a tie!"
-    } else {
-        console.log("You can only choose paper, scissors or rock");
-        document.getElementById("message").innerHTML = "You can only choose paper, scissors or rock";
-    }
-        
-}
 
 // necessary for reload game after the score 5 has been achived
 function reloadGame () {    
@@ -126,29 +173,6 @@ function reloadGame () {
     }, 2000);
 
 }
-
-// main function to start the game 
-function game (func) {
-
-    func     
-
-    document.getElementById("round").innerHTML = `ROUND ${round}`;
-
-    if (newScoreComputer >= 5) {
-        
-        document.getElementById("message").innerHTML = "Oh no, computer is the winner...";
-
-        reloadGame();
-        
-    } else if (newScorePlayer >= 5) {
-        
-        document.getElementById("message").innerHTML = "CONGRATULATIONS! You are the WINNER!";
-
-        reloadGame();
-
-    } 
- 
-} 
 
 /* VARIABLES */
 
