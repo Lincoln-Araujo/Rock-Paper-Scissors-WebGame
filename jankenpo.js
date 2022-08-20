@@ -5,8 +5,6 @@ function game (func) {
 
     while(newScorePlayer < 5 || newScoreComputer < 5) {
 
-        let playAgain;
-
         func     
 
         document.getElementById("round").innerHTML = `ROUND ${round}`
